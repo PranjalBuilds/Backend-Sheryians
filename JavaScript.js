@@ -123,3 +123,16 @@ console.log(check.a);
 
 Object.freeze(check);
 console.log(check.a);
+
+
+// asynchronous js
+
+// the code whose nature is asynchronous is sent to side stack kinda thing and after that synchronous is prioritised first (main stack code) and when the main stack is empty by execution then the side stack is asked 'have you done your job?' if it answers 'yes' then it's pushed to the main stack and executed after and if 'not' then the stacks wait until it's done, later it's pushed to the main stack and executed.
+
+async function abcd() {
+    var res = await fetch('https://randomuser.me/api/')
+    var ans = await res.json()
+    console.log(ans.results);
+}
+
+abcd();
